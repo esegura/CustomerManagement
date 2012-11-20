@@ -1,0 +1,7 @@
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\obj\Debug\ResolveAssemblyReference.cache
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\bin\Debug\CustomerManagementUtil.dll
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\bin\Debug\CustomerManagementUtil.pdb
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\bin\Debug\EntityFramework.dll
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\bin\Debug\EntityFramework.xml
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\obj\Debug\CustomerManagementUtil.dll
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\obj\Debug\CustomerManagementUtil.pdb

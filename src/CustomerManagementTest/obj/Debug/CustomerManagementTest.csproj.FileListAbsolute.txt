@@ -1,0 +1,8 @@
+C:\source\3rdParty\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll.config
+C:\source\3rdParty\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll
+C:\source\3rdParty\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.pdb
+C:\source\3rdParty\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagement.dll
+C:\source\3rdParty\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagement.pdb
+C:\source\3rdParty\CustomerManagement\src\CustomerManagementTest\obj\Debug\ResolveAssemblyReference.cache
+C:\source\3rdParty\CustomerManagement\src\CustomerManagementTest\obj\Debug\CustomerManagementTest.dll
+C:\source\3rdParty\CustomerManagement\src\CustomerManagementTest\obj\Debug\CustomerManagementTest.pdb

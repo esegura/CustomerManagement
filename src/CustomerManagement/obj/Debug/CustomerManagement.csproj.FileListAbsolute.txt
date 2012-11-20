@@ -1,0 +1,6 @@
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement\obj\Debug\ResolveAssemblyReference.cache
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement\bin\Debug\CustomerManagement.dll.config
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement\bin\Debug\CustomerManagement.dll
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement\bin\Debug\CustomerManagement.pdb
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement\obj\Debug\CustomerManagement.dll
+C:\source\3rdParty\CustomerManagement\src\CustomerManagement\obj\Debug\CustomerManagement.pdb
