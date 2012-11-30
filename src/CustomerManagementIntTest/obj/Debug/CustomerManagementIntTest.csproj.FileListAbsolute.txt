@@ -1,0 +1,4 @@
+C:\CustomerManagement\src\CustomerManagementIntTest\bin\Debug\CustomerManagementIntTest.dll
+C:\CustomerManagement\src\CustomerManagementIntTest\bin\Debug\CustomerManagementIntTest.pdb
+C:\CustomerManagement\src\CustomerManagementIntTest\obj\Debug\CustomerManagementIntTest.dll
+C:\CustomerManagement\src\CustomerManagementIntTest\obj\Debug\CustomerManagementIntTest.pdb

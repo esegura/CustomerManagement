@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-29" time="15:02:02">
+  <environment nunit-version="2.6.0.12051" clr-version="4.0.30319.17929" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\CustomerManagement\src\CustomerManagementTest\bin\Debug" machine-name="TICKR-DEV03" user="richard.lai" user-domain="TICKR" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll" executed="True" result="Failure" success="False" time="4.156" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="CustomerManagementTest" executed="True" result="Failure" success="False" time="4.109" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="CustomerTest" executed="True" result="Failure" success="False" time="4.109" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.CustomerTest.TestModifyBalance" executed="True" result="Error" success="False" time="4.031" asserts="0">
+                <failure>
+                  <message><![CDATA[System.Data.ProviderIncompatibleException : An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct.
+  ----> System.Data.ProviderIncompatibleException : The provider did not return a ProviderManifestToken string.
+  ----> System.Data.SqlClient.SqlException : Login failed for user 'customerApp'.]]></message>
+                  <stack-trace><![CDATA[at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+at System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
+at CustomerManagement.Model.Customer.ModifyBalance(Decimal amount) in C:\CustomerManagement\src\CustomerManagement\Model\Customer.cs:line 65
+at CustomerManagementTest.CustomerTest.TestModifyBalance() in C:\CustomerManagement\src\CustomerManagementTest\CustomerTest.cs:line 29
+--ProviderIncompatibleException
+at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+--SqlException
+at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+at System.Data.SqlClient.SqlConnection.Open()
+at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
+at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
+at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

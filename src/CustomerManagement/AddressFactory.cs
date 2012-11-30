@@ -42,12 +42,7 @@ namespace CustomerManagement
             return typeof(AddressFactory).Module.FindTypes((t,o) => t.IsSubclassOf(typeof(Address)), null);
         }
 
-        internal static Address Create(DAL.Address item)
-        {
-            Address address = Create((Address.CountryCode)Enum.Parse(typeof(Address.CountryCode), item.CountryCode));
-            Address.map(item, address);
-            return address;
-        }
+
 
     }
 }
