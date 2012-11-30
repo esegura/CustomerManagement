@@ -23,7 +23,10 @@ namespace CustomerManagementTest
         [SetUp]
         public void TestSetup() {
 
-        //    dbConnStr = TestDbNameBuilder.Build(Settings.Default.TestDb, () => DateTimeOffset.UtcNow.ToString("yyyy-MM-dd_hh:mm:ssZ"));
+            dbConnStr = buildConnectionString(CustomerManagementTest.Properties.Settings.Default.TestDb, () => DateTimeOffset.UtcNow.ToString("yyyy-MM-dd_hh:mm:ssZ"));
+
+
+
             customer = new Customer("type", 1);
             cs = new CustomerManagementService();
 
@@ -55,7 +58,15 @@ namespace CustomerManagementTest
         }
 
 
-
+        private string buildConnectionString(string connString, Func<string> randomGenerator)
+        {
+            var sb = new StringBuilder(connString);
+            int posStartCatalog = connString.IndexOf("Initial Catalog");
+            int posEndCatalog = connString.IndexOf(';', posStartCatalog);
+            string oldDbName = connString.Substring(posStartCatalog, posEndCatalog - posStartCatalog);
+            sb.Replace(oldDbName, string.Format("{0}_{1}", oldDbName, randomGenerator()));
+            return sb.ToString();
+        }
 
 
     }
