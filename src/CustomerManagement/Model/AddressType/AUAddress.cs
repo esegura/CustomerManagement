@@ -22,10 +22,12 @@ namespace CustomerManagement.Model.AddressType
         };
 
         internal AUAddress() { }
-
+/*
         public override Type GetStateEnumType()
         {
             return typeof(AUStateCode);
         }
+ * */
     }
+
 }

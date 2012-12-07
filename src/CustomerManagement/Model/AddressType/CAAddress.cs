@@ -25,10 +25,11 @@ namespace CustomerManagement.Model.AddressType
             SK,
             YT,
         };
-
+/*
         public override Type GetStateEnumType()
         {
             return typeof(CAStateCode);
         }
+ * */
     }
 }

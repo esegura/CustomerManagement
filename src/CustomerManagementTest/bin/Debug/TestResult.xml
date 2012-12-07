@@ -1,61 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-29" time="15:02:02">
+<test-results name="C:\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll" total="77" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-12-07" time="02:27:04">
   <environment nunit-version="2.6.0.12051" clr-version="4.0.30319.17929" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\CustomerManagement\src\CustomerManagementTest\bin\Debug" machine-name="TICKR-DEV03" user="richard.lai" user-domain="TICKR" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll" executed="True" result="Failure" success="False" time="4.156" asserts="0">
+  <test-suite type="Assembly" name="C:\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll" executed="True" result="Success" success="True" time="125.469" asserts="0">
     <results>
-      <test-suite type="Namespace" name="CustomerManagementTest" executed="True" result="Failure" success="False" time="4.109" asserts="0">
+      <test-suite type="Namespace" name="CustomerManagementTest" executed="True" result="Success" success="True" time="125.406" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="CustomerTest" executed="True" result="Failure" success="False" time="4.109" asserts="0">
+          <test-suite type="TestFixture" name="AddressTest" executed="True" result="Success" success="True" time="9.672" asserts="0">
             <results>
-              <test-case name="CustomerManagementTest.CustomerTest.TestModifyBalance" executed="True" result="Error" success="False" time="4.031" asserts="0">
-                <failure>
-                  <message><![CDATA[System.Data.ProviderIncompatibleException : An error occurred while getting provider information from the database. This can be caused by Entity Framework using an incorrect connection string. Check the inner exceptions for details and ensure that the connection string is correct.
-  ----> System.Data.ProviderIncompatibleException : The provider did not return a ProviderManifestToken string.
-  ----> System.Data.SqlClient.SqlException : Login failed for user 'customerApp'.]]></message>
-                  <stack-trace><![CDATA[at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
-at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
-at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
-at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
-at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
-at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
-at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
-at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
-at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
-at System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
-at CustomerManagement.Model.Customer.ModifyBalance(Decimal amount) in C:\CustomerManagement\src\CustomerManagement\Model\Customer.cs:line 65
-at CustomerManagementTest.CustomerTest.TestModifyBalance() in C:\CustomerManagement\src\CustomerManagementTest\CustomerTest.cs:line 29
---ProviderIncompatibleException
-at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
-at System.Data.Entity.ModelConfiguration.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
---SqlException
-at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
-at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
-at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
-at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
-at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
-at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-at System.Data.SqlClient.SqlConnection.Open()
-at System.Data.SqlClient.SqlProviderServices.UsingConnection(SqlConnection sqlConnection, Action`1 act)
-at System.Data.SqlClient.SqlProviderServices.UsingMasterConnection(SqlConnection sqlConnection, Action`1 act)
-at System.Data.SqlClient.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
-at System.Data.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
-]]></stack-trace>
-                </failure>
-              </test-case>
+              <test-case name="CustomerManagementTest.AddressTest.Create" executed="True" result="Success" success="True" time="1.891" asserts="2" />
+              <test-case name="CustomerManagementTest.AddressTest.Delete" executed="True" result="Success" success="True" time="1.516" asserts="1" />
+              <test-case name="CustomerManagementTest.AddressTest.Read" executed="True" result="Success" success="True" time="1.609" asserts="1" />
+              <test-case name="CustomerManagementTest.AddressTest.TestCountryString_And_Enum" executed="True" result="Success" success="True" time="1.641" asserts="3" />
+              <test-case name="CustomerManagementTest.AddressTest.Update" executed="True" result="Success" success="True" time="1.469" asserts="1" />
+              <test-case name="CustomerManagementTest.AddressTest.Update_WithDifferentCountry" executed="True" result="Success" success="True" time="1.516" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="CustomerManagerTest" executed="True" result="Success" success="True" time="72.438" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.CustomerManagerTest.Test_Create_Read_PaymentType" executed="True" result="Success" success="True" time="1.594" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.Test_Create_ReadInvoice" executed="True" result="Success" success="True" time="1.641" asserts="7" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.Test_Create_ReadInvoice_WithoutUiITems" executed="True" result="Success" success="True" time="1.563" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.Test_Create_ReadInvoice_WithVoid" executed="True" result="Success" success="True" time="1.391" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.Test_Create_ReadPayment" executed="True" result="Success" success="True" time="1.578" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateAddress" executed="True" result="Success" success="True" time="1.500" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateAddress_WithInvalidState" executed="True" result="Success" success="True" time="1.453" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateAddress_WithoutCity" executed="True" result="Success" success="True" time="1.516" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateAddress_WithoutLine1" executed="True" result="Success" success="True" time="1.594" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateAddress_WithoutState" executed="True" result="Success" success="True" time="1.547" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateAddress_WithoutZip" executed="True" result="Success" success="True" time="1.625" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateCustomer" executed="True" result="Success" success="True" time="1.469" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateCustomer_WithoutEmail" executed="True" result="Success" success="True" time="1.484" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateCustomer_WithoutFirstName" executed="True" result="Success" success="True" time="1.516" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateCustomer_WithoutLastName" executed="True" result="Success" success="True" time="1.484" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateCustomer_WithoutType" executed="True" result="Success" success="True" time="1.625" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreateItem" executed="True" result="Success" success="True" time="1.453" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreatePhone" executed="True" result="Success" success="True" time="1.500" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreatePhone_WithoutCode" executed="True" result="Success" success="True" time="1.547" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestCreatePhone_WithoutNumber" executed="True" result="Success" success="True" time="1.359" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestDeleteAddress" executed="True" result="Success" success="True" time="1.625" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestDeleteCustomer" executed="True" result="Success" success="True" time="1.516" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestDeleteInvoiceDetail" executed="True" result="Success" success="True" time="1.484" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestDeleteItem" executed="True" result="Success" success="True" time="1.453" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestDeletePayment" executed="True" result="Success" success="True" time="1.547" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestDeletePaymentType" executed="True" result="Success" success="True" time="1.594" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestDeletePhone" executed="True" result="Success" success="True" time="1.422" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestGetInvoiceDetail" executed="True" result="Success" success="True" time="1.531" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestReadAddress" executed="True" result="Success" success="True" time="1.422" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestReadCustomer" executed="True" result="Success" success="True" time="1.656" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestReadItem" executed="True" result="Success" success="True" time="1.344" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestReadPhone" executed="True" result="Success" success="True" time="1.703" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestUpdateAddress" executed="True" result="Success" success="True" time="1.484" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestUpdateAddress_WithInvalidState" executed="True" result="Success" success="True" time="1.547" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestUpdateCustomer" executed="True" result="Success" success="True" time="1.734" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestUpdateInvoice" executed="True" result="Success" success="True" time="1.531" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestUpdateInvoiceDetail" executed="True" result="Success" success="True" time="1.547" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestUpdateItem" executed="True" result="Success" success="True" time="1.500" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestUpdatePayment" executed="True" result="Success" success="True" time="1.719" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestUpdatePaymentType" executed="True" result="Success" success="True" time="1.406" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestUpdatePhone" executed="True" result="Success" success="True" time="1.438" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerManagerTest.TestVoidInvoice" executed="True" result="Success" success="True" time="1.484" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="CustomerTest" executed="True" result="Success" success="True" time="8.828" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.CustomerTest.TestCreate" executed="True" result="Success" success="True" time="1.563" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerTest.TestDefaultPaymentType" executed="True" result="Success" success="True" time="1.375" asserts="0" />
+              <test-case name="CustomerManagementTest.CustomerTest.TestDelete" executed="True" result="Success" success="True" time="1.625" asserts="1" />
+              <test-case name="CustomerManagementTest.CustomerTest.TestModifyBalance" executed="True" result="Success" success="True" time="1.391" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerTest.TestRead" executed="True" result="Success" success="True" time="1.344" asserts="2" />
+              <test-case name="CustomerManagementTest.CustomerTest.TestUpdate" executed="True" result="Success" success="True" time="1.516" asserts="4" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="InvoiceDetailDetail" executed="True" result="Success" success="True" time="4.422" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.InvoiceDetailDetail.Create_Read" executed="True" result="Success" success="True" time="1.391" asserts="1" />
+              <test-case name="CustomerManagementTest.InvoiceDetailDetail.Delete" executed="True" result="Success" success="True" time="1.625" asserts="1" />
+              <test-case name="CustomerManagementTest.InvoiceDetailDetail.Update" executed="True" result="Success" success="True" time="1.391" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="InvoiceTest" executed="True" result="Success" success="True" time="6.250" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.InvoiceTest.Create_Read" executed="True" result="Success" success="True" time="1.469" asserts="1" />
+              <test-case name="CustomerManagementTest.InvoiceTest.Delete" executed="True" result="Success" success="True" time="1.563" asserts="1" />
+              <test-case name="CustomerManagementTest.InvoiceTest.InvoiceType" executed="True" result="Success" success="True" time="1.547" asserts="1" />
+              <test-case name="CustomerManagementTest.InvoiceTest.Update" executed="True" result="Success" success="True" time="1.656" asserts="2" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="ItemPricingTest" executed="True" result="Success" success="True" time="4.484" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.ItemPricingTest.Create_Read" executed="True" result="Success" success="True" time="1.594" asserts="1" />
+              <test-case name="CustomerManagementTest.ItemPricingTest.Delete" executed="True" result="Success" success="True" time="1.406" asserts="1" />
+              <test-case name="CustomerManagementTest.ItemPricingTest.Update" executed="True" result="Success" success="True" time="1.484" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="ItemTest" executed="True" result="Success" success="True" time="5.563" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.ItemTest.Create_Read" executed="True" result="Success" success="True" time="1.328" asserts="3" />
+              <test-case name="CustomerManagementTest.ItemTest.Delete" executed="True" result="Success" success="True" time="1.328" asserts="1" />
+              <test-case name="CustomerManagementTest.ItemTest.TestItemPricing" executed="True" result="Success" success="True" time="1.406" asserts="1" />
+              <test-case name="CustomerManagementTest.ItemTest.Update" executed="True" result="Success" success="True" time="1.500" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="PaymentTest" executed="True" result="Success" success="True" time="4.422" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.PaymentTest.Create_Read" executed="True" result="Success" success="True" time="1.531" asserts="1" />
+              <test-case name="CustomerManagementTest.PaymentTest.Delete" executed="True" result="Success" success="True" time="1.391" asserts="1" />
+              <test-case name="CustomerManagementTest.PaymentTest.Update" executed="True" result="Success" success="True" time="1.484" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="PaymentTypeType" executed="True" result="Success" success="True" time="4.531" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.PaymentTypeType.Create_Read" executed="True" result="Success" success="True" time="1.563" asserts="1" />
+              <test-case name="CustomerManagementTest.PaymentTypeType.Delete" executed="True" result="Success" success="True" time="1.531" asserts="1" />
+              <test-case name="CustomerManagementTest.PaymentTypeType.Update" executed="True" result="Success" success="True" time="1.438" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="PhoneTest" executed="True" result="Success" success="True" time="4.781" asserts="0">
+            <results>
+              <test-case name="CustomerManagementTest.PhoneTest.Create_Read" executed="True" result="Success" success="True" time="1.500" asserts="1" />
+              <test-case name="CustomerManagementTest.PhoneTest.Delete" executed="True" result="Success" success="True" time="1.844" asserts="1" />
+              <test-case name="CustomerManagementTest.PhoneTest.Update" executed="True" result="Success" success="True" time="1.422" asserts="1" />
             </results>
           </test-suite>
         </results>

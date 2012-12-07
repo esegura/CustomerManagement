@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 using CustomerManagement.Util;
+using CustomerManagement.Model.AddressType;
 
 namespace CustomerManagement.Model
 {
     
     [DataContract, Serializable]
-    public abstract class Address: TrackableEntity
+    public class Address: TrackableEntity //Removed AddressFactory and changed from abstract class
     {
+   
         public enum TypeEnum {Default, Home, Other, BillTo, ShipTo } 
         public enum CountryCode         // INTERNATIONAL ABBREVIATION CODES: http://mic.imtc.gatech.edu/archive_directory_1/country.htm
         {
@@ -269,6 +271,335 @@ namespace CustomerManagement.Model
             #endregion
         }
 
+        public enum USStateCode
+        {
+            AK,
+            AL,
+            AR,
+            AS,
+            AZ,
+            CA,
+            CO,
+            CT,
+            DC,
+            DE,
+            FL,
+            GA,
+            HI,
+            IA,
+            ID,
+            IL,
+            IN,
+            KS,
+            KY,
+            LA,
+            MA,
+            MD,
+            ME,
+            MI,
+            MN,
+            MO,
+            MP,
+            MS,
+            MT,
+            NC,
+            ND,
+            NE,
+            NH,
+            NJ,
+            NM,
+            NV,
+            NY,
+            OH,
+            OK,
+            OR,
+            PA,
+            RI,
+            SC,
+            SD,
+            TN,
+            TX,
+            UT,
+            VA,
+            VT,
+            WA,
+            WI,
+            WV,
+            WY,
+        };
+
+        public enum UKStateCode
+        {
+            BNE,
+            BNS,
+            BAS,
+            BDF,
+            BEX,
+            BIR,
+            BBD,
+            BPL,
+            BOL,
+            BMH,
+            BRC,
+            BRD,
+            BEN,
+            BNH,
+            BST,
+            BRY,
+            BKM,
+            BUR,
+            CLD,
+            CAM,
+            CMD,
+            CHS,
+            CON,
+            COV,
+            CRY,
+            CMA,
+            DAL,
+            DER,
+            DBY,
+            DEV,
+            DNC,
+            DOR,
+            DUD,
+            DUR,
+            EAL,
+            ERY,
+            ESX,
+            ENF,
+            ESS,
+            GAT,
+            GLS,
+            GRE,
+            HCK,
+            HAL,
+            HMF,
+            HAM,
+            HRY,
+            HRW,
+            HPL,
+            HAV,
+            HEF,
+            HRT,
+            HIL,
+            HNS,
+            IOW,
+            IOS,
+            ISL,
+            KEC,
+            KEN,
+            KHL,
+            KTT,
+            KIR,
+            KWL,
+            LBH,
+            LAN,
+            LDS,
+            LCE,
+            LEC,
+            LEW,
+            LIN,
+            LIV,
+            LND,
+            LUT,
+            MAN,
+            MDW,
+            MRT,
+            MDB,
+            MIK,
+            NET,
+            NWM,
+            NFK,
+            NEL,
+            NLN,
+            NSM,
+            NTY,
+            NYK,
+            NTH,
+            NBL,
+            NGM,
+            NTT,
+            OLD,
+            OXF,
+            PTE,
+            PLY,
+            POL,
+            POR,
+            RDG,
+            RDB,
+            RCC,
+            RIC,
+            RCH,
+            ROT,
+            RUT,
+            SHN,
+            SLF,
+            SAW,
+            SFT,
+            SHF,
+            SHR,
+            SLG,
+            SOL,
+            SOM,
+            SGC,
+            STY,
+            STH,
+            SOS,
+            SWK,
+            STS,
+            SKP,
+            STT,
+            STE,
+            SFK,
+            SND,
+            SRY,
+            STN,
+            SWD,
+            TAM,
+            TFW,
+            THR,
+            TOB,
+            TWH,
+            TRF,
+            WKF,
+            WLL,
+            WFT,
+            WND,
+            WRT,
+            WAR,
+            WBK,
+            WSX,
+            WSM,
+            WGN,
+            WIL,
+            WNM,
+            WRL,
+            WOK,
+            WLV,
+            WOR,
+            YOR,
+
+            // Scotland
+
+            ABE,
+            ABD,
+            ANS,
+            AGB,
+            CLK,
+            DGY,
+            DND,
+            EAY,
+            EDU,
+            ELN,
+            ERW,
+            EDH,
+            ELS,
+            FAL,
+            FIF,
+            GLG,
+            HLD,
+            IVC,
+            NAY,
+            NLK,
+            ORK,
+            PKN,
+            MLN,
+            MRY,
+            RFW,
+            SCB,
+            ZET,
+            SAY,
+            SLK,
+            STG,
+            WDU,
+            WLN,
+
+            // Northern Ireland
+
+            ANT,
+            ARD,
+            ARM,
+            BLA,
+            BLY,
+            BNB,
+            BFS,
+            CKF,
+            CSR,
+            CLR,
+            CKT,
+            CGV,
+            DRY,
+            DOW,
+            DGN,
+            FER,
+            LRN,
+            LMV,
+            LSB,
+            MFT,
+            MYL,
+            NYM,
+            NTA,
+            NDN,
+            OMH,
+            STB,
+
+            // Wales
+
+            BGW,
+            BGE,
+            CAY,
+            CRF,
+            CMN,
+            CGN,
+            CWY,
+            DEN,
+            FLN,
+            GWN,
+            AGY,
+            MTY,
+            MON,
+            NTL,
+            NWP,
+            PEM,
+            POW,
+            RCT,
+            SWA,
+            TOF,
+            VGL,
+            WRX
+        };
+
+        public enum CAStateCode
+        {
+            AB,
+            BC,
+            MB,
+            NB,
+            NL,
+            NS,
+            NT,
+            NU,
+            ON,
+            PE,
+            QC,
+            SK,
+            YT,
+        };
+
+        public enum AUStateCode
+        {
+            CT,
+            NS,
+            NT,
+            QL,
+            SA,
+            TS,
+            VI,
+            WA
+        };
+
+
         [DataMember]
         public string Note { get; set; }
         [DataMember]
@@ -279,20 +610,20 @@ namespace CustomerManagement.Model
         public String Line2 { get; set; }
         [DataMember] 
         public String City { get; set; }
-        [DataMember]
+
         private string _state;
+        [DataMember]
         public string State
         {
             get { return _state; }
-            //set { this._state = Enum.Parse(this.GetStateEnumType(), value).ToString(); }
             set { this._state = value; }
         }
         
-
         [DataMember]
         public String ZipCode { get; set; }
 
-        public string country;
+        public string country {get; set;}
+        
         [DataMember]
         public CountryCode Country
         {
@@ -306,7 +637,7 @@ namespace CustomerManagement.Model
             }
         }
         
-        public String addressType {get; set;}
+        public string addressType {get; set;}
         [DataMember]
         public TypeEnum AddressType
         {
@@ -320,11 +651,70 @@ namespace CustomerManagement.Model
             }
         }
 
-        protected Address() { }
+        public Address()
+        {
+        }
 
-        public abstract System.Type GetStateEnumType();  //?
+        public System.Type GetStateEnumType()
+        {
+
+            var c = this.Country;
+            Type result;
+
+            switch (c)
+            {
+                case Address.CountryCode.US:
+                    result = typeof(USStateCode);
+                    break;
+                case Address.CountryCode.UK:
+                    result = typeof(UKStateCode);
+                    break;
+                case Address.CountryCode.CA:
+                    result = typeof(CAStateCode);
+                    break;
+                case Address.CountryCode.AU:
+                    result = typeof(AUAddress);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("country");
+
+            }
+            return result;
+        }
+ 
 
 
+        //protected Address() { }
+
+        //public abstract System.Type GetStateEnumType();  
+/*
+        public static Address ConvertToSubClass(Address address) { // use to convert a loaded object from db into the correct subclass type. Next time put this in config file so can dynamically do this. See Ed's computer
+  
+            var country = address.Country;
+            Address result;
+
+            switch (country)
+            {
+                case Address.CountryCode.US:
+                    result= (USAddress)address;
+                    break;
+                case Address.CountryCode.UK:
+                    result= (UKAddress)address;
+                    break;
+                case Address.CountryCode.CA:
+                    result= (CAAddress)address;
+                    break;
+                case Address.CountryCode.AU:
+                   result= (AUAddress)address;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("country");
+
+            }
+
+            return address;
+        }
+*/
     }
  
 }

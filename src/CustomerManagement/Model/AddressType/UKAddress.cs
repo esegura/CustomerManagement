@@ -250,10 +250,11 @@ namespace CustomerManagement.Model.AddressType
             VGL,
             WRX
         };
-
+/*
         public override Type GetStateEnumType()
         {
             return typeof(UKStateCode);
         }
+ */
     }
 }

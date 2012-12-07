@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ShowCheckBoxes="false">
+  <TopNode>[0-1012]C:\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll</TopNode>
+  <SelectedNode>[0-1007]CustomerManagementTest.AddressTest</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1012]C:\CustomerManagement\src\CustomerManagementTest\bin\Debug\CustomerManagementTest.dll" Expanded="true" />
+    <Node UniqueName="[0-1013]CustomerManagementTest" Expanded="true" />
+    <Node UniqueName="[0-1007]CustomerManagementTest.AddressTest" Expanded="true" />
+    <Node UniqueName="[0-1000]CustomerManagementTest.CustomerTest" Expanded="true" />
+  </Nodes>
+</VisualState>

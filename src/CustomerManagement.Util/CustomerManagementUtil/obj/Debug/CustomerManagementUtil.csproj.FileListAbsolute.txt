@@ -11,4 +11,3 @@ C:\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\bin\Deb
 C:\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\bin\Debug\EntityFramework.xml
 C:\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\obj\Debug\CustomerManagementUtil.dll
 C:\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\obj\Debug\CustomerManagementUtil.pdb
-C:\CustomerManagement\src\CustomerManagement.Util\CustomerManagementUtil\obj\Debug\CustomerManagementUtil.csprojResolveAssemblyReference.cache

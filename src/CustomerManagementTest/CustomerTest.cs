@@ -17,7 +17,8 @@ namespace CustomerManagementTest
     public class CustomerTest
     {
         Customer customer;
-        CustomerManagementService cs;
+        long custId;
+        CustomerManager cs;
         string dbConnStr;
 
         [SetUp]
@@ -25,10 +26,20 @@ namespace CustomerManagementTest
 
             dbConnStr = buildConnectionString(CustomerManagementTest.Properties.Settings.Default.TestDb, () => DateTimeOffset.UtcNow.ToString("yyyy-MM-dd_hh:mm:ssZ"));
 
+            var csMock = new Mock<CustomerManager>();
+            csMock.CallBase = true;
+            csMock.Protected().SetupGet<Func<CustomerContext>>("Db").Returns(() => new CustomerContext(dbConnStr));
+            cs = csMock.Object;
 
 
-            customer = new Customer("type", 1);
-            cs = new CustomerManagementService();
+            using (var db = new CustomerContext(dbConnStr))
+            {
+                var cust = new Customer { CustomerType = "type", UserId = 1, FirstName = "First", MiddleName="MiddleName", LastName = "Last", Email = "hello@g.com",Balance=12.00M};
+
+                db.Save(cust);            
+                db.SaveChanges();
+                custId = cust.Id;
+            }
 
         }
 
@@ -45,14 +56,80 @@ namespace CustomerManagementTest
         [Test]
         public void TestModifyBalance()
         {
-            customer.Balance = 12.00M;
-            customer.ModifyBalance(5.00M);
-            Assert.AreEqual(customer.Balance, 17.00M, "Balance is not updated");
-
+            cs.ModifyBalance(custId, 5M);
+           
+            using (var db = new CustomerContext(dbConnStr))
+            {
+                var cust = db.Customers.First(p => p.Id == custId);
+                Assert.AreEqual(cust.Balance, 17M, "Balance is not updated");
+                Assert.IsTrue(cust.FirstName == "First", "wrong name");
+            }
         }
 
         [Test]
         public void TestRead()
+        {
+            using (var db = new CustomerContext(dbConnStr))
+            {
+                var cust = db.Customers.First(p => p.Id == custId);
+                Assert.AreEqual(cust.Id, custId, "Not reading correct customer");
+                Assert.IsTrue(cust.FirstName == "First" && cust.LastName == "Last" && cust.MiddleName == "MiddleName" && cust.CustomerType == "type", "Did not read correct customer");
+            }
+        }
+
+        [Test]
+        public void TestCreate()
+        {
+            using (var db = new CustomerContext(dbConnStr))
+            {
+                var cust = new Customer { CustomerType = "type", UserId = 2, FirstName = "First", LastName = "Last", Email = "hello@g.com",Balance=12.00M};
+                db.Save(cust);
+                db.SaveChanges();
+                var count = db.Customers.Count();
+                var newcust = db.Customers.First(p => p.Id == cust.Id);
+                Assert.IsTrue(count == 2, "Incorrect count");
+                Assert.IsTrue(newcust.UserId == 2 && cust.Id == newcust.Id, "Customer does not match");
+
+            }
+        }
+
+        [Test]
+        public void TestUpdate()
+        {
+            using (var db = new CustomerContext(dbConnStr))
+            {
+                var cust = db.Customers.First(p => p.Id == custId);
+                db.Attach(cust);
+                cust.FirstName = "New Name";
+                cust.LastName = "New Name";
+                cust.MiddleName = "New Name";
+                cust.CustomerType = "New Type";
+                db.SaveChanges();
+                cust = db.Customers.First(p => p.Id == custId);
+                Assert.IsTrue(cust.FirstName == "New Name", "no change");
+                Assert.IsTrue(cust.LastName == "New Name", "no change");
+                Assert.IsTrue(cust.MiddleName == "New Name", "no change");
+                Assert.IsTrue(cust.CustomerType == "New Type", "no change");
+            }
+        }
+
+        [Test]
+        public void TestDelete()
+        {
+            using (var db = new CustomerContext(dbConnStr))
+            {
+                var cust = db.Customers.First(p => p.Id == custId);
+                db.Attach(cust);
+                cust.IsDeleted = true;
+                db.SaveChanges();
+                cust = db.Customers.First(p => p.Id == custId);
+                Assert.IsTrue(cust.IsDeleted == true, "Is not set to delete");
+            }
+        }
+
+
+        [Test]
+        public void TestDefaultPaymentType()
         {
 
         }

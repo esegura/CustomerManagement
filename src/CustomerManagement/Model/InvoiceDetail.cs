@@ -11,20 +11,16 @@ namespace CustomerManagement.Model
     {
 
         [DataMember]
-        public Invoice Invoice { get; set; }           //   int InvoiceHeaderId { get; set; }
+        public Invoice Invoice { get; set; }          
         [DataMember]
-        public ItemPricing ItemPricing { get; set; }  //    int ItemPricingId { get; set; }
+        public ItemPricing ItemPricing { get; set; } 
         [DataMember]
         public int ItemUnits { get; set; }
 
-        private InvoiceDetail()
+
+        public InvoiceDetail()
         {
          
-        }
-
-        public InvoiceDetail(ItemPricing ip):this()
-        {
-            this.ItemPricing = ip;
         }
 
 

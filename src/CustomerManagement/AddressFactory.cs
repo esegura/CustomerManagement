@@ -5,7 +5,7 @@ using System.Text;
 using CustomerManagement.Model.AddressType;
 using System.Reflection;
 using CustomerManagement.Model;
-
+/*
 namespace CustomerManagement
 {
     internal class AddressFactory
@@ -46,3 +46,4 @@ namespace CustomerManagement
 
     }
 }
+*/

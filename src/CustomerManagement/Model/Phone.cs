@@ -13,17 +13,28 @@ namespace CustomerManagement.Model
         public enum Type { Home, Work, Cell }
 
         [DataMember]
-        public Customer Customer { get; set; }              // int CustomerId { get; private set; }
+        public Customer Customer { get; set; }              
         [DataMember]
         public string CountryCallingCode { get; set; }
         [DataMember]
         public string Number { get; set; }
-        [DataMember]
-        public Type PhoneType { get; private set; }
 
-        public Phone(Phone.Type at)
+        public string phone { get; set; }
+        [DataMember]
+        public Type PhoneType {
+            get
+            {
+                return (Type)Enum.Parse(typeof(Type), phone, true);
+            }
+            set
+            {
+                this.phone= value.ToString();
+            }
+        }
+
+        public Phone()
         {
-            this.PhoneType = at;
+
         }
 
     }

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="TestDb" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">test</Value>
+      <Value Profile="(Default)">Data Source=sql-qa-dev.tickr.com;Initial Catalog=CustomerManagementTest;Persist Security Info=True;User ID=TickrBackEndUser_Dev;Password=Abcd!234</Value>
     </Setting>
   </Settings>
 </SettingsFile>

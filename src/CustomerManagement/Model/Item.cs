@@ -24,15 +24,6 @@ namespace CustomerManagement.Model
         {
             this.ItemPricings = new List<ItemPricing>();
         }
-
-        public static IEnumerable<Item> LoadAllItems()
-        {
-            using (var db = new CustomerContext())
-            {
-                return db.Items.Where(item => !item.IsDeleted);
-            }
-        }
-
  
     }
 }

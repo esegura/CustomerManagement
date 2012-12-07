@@ -31,11 +31,7 @@ namespace CustomerManagement.Model
  
         }
 
-        public ItemPricing(Item item)
-        {
-            this.Item = item;
-        }
-
+ 
 
 
     }

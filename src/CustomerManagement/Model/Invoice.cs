@@ -14,24 +14,48 @@ namespace CustomerManagement.Model
 
         [DataMember]
         public string Note { get; set; }
+
         [DataMember]
         public string PaymentNote { get; set; } //put address info (deserialize) and customer info and current payment information
 
         [DataMember]
         public Customer Customer { get; set; }
-        
+
+        public string invoiceType { get; set; }
+
         [DataMember]
-        public Type InvoiceType { get; set; }
-        
+        public Type InvoiceType
+        {
+            get
+            {
+                return (Invoice.Type)Enum.Parse(typeof(Invoice.Type), invoiceType, true);
+            }
+            set
+            {
+                this.invoiceType = value.ToString();
+            }
+        }
+
         [DataMember]
         public List<InvoiceDetail> InvoiceDetails { get; set; }
-       
-        public Invoice(Invoice.Type it)
+     
+        /*
+        private Invoice(Invoice.Type it)
         {
             this.InvoiceType = it;
             this.InvoiceDetails = new List<InvoiceDetail>();
         }
 
+        public Invoice(Customer cust, Invoice.Type it)
+            : this(it)
+        {
+            this.Customer = cust;
+        }
+        */
+        public Invoice()
+        {
+
+        }
 
     }
 }

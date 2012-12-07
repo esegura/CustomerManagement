@@ -65,10 +65,11 @@ namespace CustomerManagement.Model.AddressType
             WV,
             WY,
         };
-
+/*
         public override Type GetStateEnumType()
         {
             return typeof(USStateCode);
         }
+ */
     }
 }

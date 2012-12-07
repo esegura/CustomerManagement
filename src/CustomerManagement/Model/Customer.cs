@@ -30,22 +30,24 @@ namespace CustomerManagement.Model
         public List<Address> Addresses { get; set; }
         [DataMember]
         public List<Phone> Phones { get; set; }
+
+        public List<PaymentType> PaymentTypes { get; set; }
         
         [DataMember]
         public decimal Balance { get; set; }
         [DataMember]
         public int UserId { get; set; }
+
         [DataMember]
         public PaymentType DefaultPaymentType { get; set; }
-   
-
+/*
         public Customer(string type, int userId):this()
         {
             this.CustomerType = type;
             this.UserId = userId;
         }
-
-        private Customer() 
+*/
+        public Customer() 
         {
             this.Addresses = new List<Address>();
             this.Phones = new List<Phone>();
@@ -58,16 +60,8 @@ namespace CustomerManagement.Model
         }
 */
 
-        internal void ModifyBalance(decimal amount)
-        {
-            using (var db = new CustomerContext())
-            {
-                var customer = db.Customers.Single(c => c.Id == this.Id); 
-                customer.Balance += amount;
-               db.SaveChanges();
-            }
-        }
     }
+
 
 
 }
